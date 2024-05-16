@@ -79,6 +79,9 @@
                             {{ trans('cruds.pengukuran.fields.golongan_darah') }}
                         </th>
                         <th>
+                            {{ trans('cruds.pengukuran.fields.hba_1_c') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -145,6 +148,9 @@
                             </td>
                             <td>
                                 {{ App\Models\Pengukuran::GOLONGAN_DARAH_SELECT[$pengukuran->golongan_darah] ?? '' }}
+                            </td>
+                            <td>
+                                {{ $pengukuran->hba_1_c ?? '' }}
                             </td>
                             <td>
                                 @can('pengukuran_show')

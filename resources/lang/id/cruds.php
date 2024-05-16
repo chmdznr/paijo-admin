@@ -157,6 +157,8 @@ return [
             'kondisi_umum_helper'                 => ' ',
             'keluhan_perasaan'                    => 'Keluhan/Perasaan',
             'keluhan_perasaan_helper'             => ' ',
+            'hba_1_c'                             => 'HBA1C',
+            'hba_1_c_helper'                      => ' ',
         ],
     ],
     'trik' => [

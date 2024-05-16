@@ -27,6 +27,7 @@ class CreatePengukuransTable extends Migration
             $table->integer('kadar_hb')->nullable();
             $table->float('kadar_asam_urat', 15, 2)->nullable();
             $table->string('golongan_darah')->nullable();
+            $table->float('hba_1_c', 15, 2)->nullable();
             $table->longText('kondisi_umum')->nullable();
             $table->longText('keluhan_perasaan')->nullable();
             $table->timestamps();

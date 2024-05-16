@@ -55,6 +55,7 @@ class Pengukuran extends Model implements HasMedia
         'kadar_hb',
         'kadar_asam_urat',
         'golongan_darah',
+        'hba_1_c',
         'kondisi_umum',
         'keluhan_perasaan',
         'created_at',

@@ -169,6 +169,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.pengukuran.fields.hba_1_c') }}
+                        </th>
+                        <td>
+                            {{ $pengukuran->hba_1_c }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.pengukuran.fields.kondisi_umum') }}
                         </th>
                         <td>

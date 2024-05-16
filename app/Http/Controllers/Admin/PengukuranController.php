@@ -24,7 +24,9 @@ class PengukuranController extends Controller
 
         $pengukurans = Pengukuran::with(['identitas'])->get();
 
-        return view('admin.pengukurans.index', compact('pengukurans'));
+        $identita = Identitum::get();
+
+        return view('admin.pengukurans.index', compact('identita', 'pengukurans'));
     }
 
     public function create()
