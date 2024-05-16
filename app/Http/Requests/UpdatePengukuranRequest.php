@@ -92,6 +92,9 @@ class UpdatePengukuranRequest extends FormRequest
             'kadar_asam_urat' => [
                 'numeric',
             ],
+            'hba_1_c' => [
+                'numeric',
+            ],
         ];
     }
 }

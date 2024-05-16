@@ -204,6 +204,16 @@
                 <span class="help-block">{{ trans('cruds.pengukuran.fields.golongan_darah_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="hba_1_c">{{ trans('cruds.pengukuran.fields.hba_1_c') }}</label>
+                <input class="form-control {{ $errors->has('hba_1_c') ? 'is-invalid' : '' }}" type="number" name="hba_1_c" id="hba_1_c" value="{{ old('hba_1_c', '') }}" step="0.01">
+                @if($errors->has('hba_1_c'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('hba_1_c') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.pengukuran.fields.hba_1_c_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="kondisi_umum">{{ trans('cruds.pengukuran.fields.kondisi_umum') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('kondisi_umum') ? 'is-invalid' : '' }}" name="kondisi_umum" id="kondisi_umum">{!! old('kondisi_umum') !!}</textarea>
                 @if($errors->has('kondisi_umum'))
