@@ -60,20 +60,27 @@ class Identitum extends Model
 
     protected static function boot()
     {
-        parent::boot();
+        Parent::boot();
 
         static::deleting(function ($parent) {
             if ($parent->isForceDeleting()) {
-                $parent->children()->forceDelete();
+                $parent->identitasPengukurans()->forceDelete();
+                $parent->identitasCatatans()->forceDelete();
             } else {
-                $parent->children()->each(function ($child) {
+                $parent->identitasPengukurans()->each(function ($child) {
+                    $child->delete();
+                });
+                $parent->identitasCatatans()->each(function ($child) {
                     $child->delete();
                 });
             }
         });
 
         static::restoring(function ($parent) {
-            $parent->children()->withTrashed()->each(function ($child) {
+            $parent->identitasPengukurans()->withTrashed()->each(function ($child) {
+                $child->restore();
+            });
+            $parent->identitasCatatans()->withTrashed()->each(function ($child) {
                 $child->restore();
             });
         });
