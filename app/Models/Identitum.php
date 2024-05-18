@@ -58,6 +58,27 @@ class Identitum extends Model
         'deleted_at',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($parent) {
+            if ($parent->isForceDeleting()) {
+                $parent->children()->forceDelete();
+            } else {
+                $parent->children()->each(function ($child) {
+                    $child->delete();
+                });
+            }
+        });
+
+        static::restoring(function ($parent) {
+            $parent->children()->withTrashed()->each(function ($child) {
+                $child->restore();
+            });
+        });
+    }
+
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
